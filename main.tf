@@ -1,5 +1,5 @@
 locals {
-  aws_region   = "us-east-1"
+  aws_region = "us-east-1"
 }
 
 provider "aws" {
@@ -21,8 +21,9 @@ module "vpc" {
   #NAT Gateway
   enable_nat_gateway = true
 }
+
 module "eks" {
-  source = "./modules/eks/"
-  vpc_id = module.vpc.vpc_id
+  source                = "./modules/eks/"
+  vpc_id                = module.vpc.vpc_id
   vpc_public_subnet_ids = module.vpc.public_subnets
 }

@@ -2,4 +2,3 @@
 .terraform.lock.hcl
 .terraform/
 backend_storage.tf
-main.py

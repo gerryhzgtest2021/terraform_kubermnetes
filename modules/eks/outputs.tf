@@ -1,5 +1,5 @@
 locals {
-  kubeconfig          = <<KUBECONFIG
+  kubeconfig = <<KUBECONFIG
 apiVersion: v1
 clusters:
 - cluster:
@@ -41,9 +41,11 @@ data:
         - system:nodes
 CONFIGMAPAWSAUTH
 }
+
 output "kubeconfig" {
   value = local.kubeconfig
 }
+
 output "config-map-aws-auth" {
   value = local.config-map-aws-auth
 }
